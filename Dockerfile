@@ -1,2 +1,4 @@
 FROM abdelkaderbensaria/wildfly
- COPY target/AngularJSRestful.war /opt/jboss/wildfly/standalone/deployments/
+RUN docker tag abdelkaderbensaria/wildfly abdelkaderbensaria/abdelkaderbensaria/wildfly
+docker tag abdelkaderbensaria/wildfly
+ COPY target/AngularJSRestful.war /opt/jboss/wildfly/standalone/deployments/docker tag jboss/
