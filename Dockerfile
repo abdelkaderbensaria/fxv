@@ -1,2 +1,2 @@
 FROM abdelkaderbensaria/wildfly
- COPY target/AngularJSRestful.war /opt/jboss/wildfly/standalone/deployments/ngularJSRestful.war
+ COPY target/AngularJSRestful.war /opt/jboss/wildfly/standalone/deployments/AngularJSRestful.war
