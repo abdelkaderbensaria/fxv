@@ -7,17 +7,6 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>AngularJSRestful Maven Webapp</name>
   <url>http://maven.apache.org</url>
-<dependencyManagement>
-      <dependencies>
-         <dependency>
-            <groupId>org.wildfly.bom</groupId>
-            <artifactId>wildfly-javaee7-with-tools</artifactId>
-            <version>${version.jboss.bom}</version>
-            <type>pom</type>
-            <scope>import</scope>
-         </dependency>
-      </dependencies>
-   </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -25,33 +14,16 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    <build>
-      <finalName>${project.artifactId}</finalName>
-      <plugins>
-         <plugin>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <version>2.3.1</version>
-            <configuration>
-               <source>1.6</source>
-               <target>1.6</target>
-            </configuration>
-         </plugin>
-         <plugin>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.1.1</version>
-            <configuration>
-               <!-- Java EE 6 doesn't require web.xml, Maven needs to catch up! -->
-               <failOnMissingWebXml>false</failOnMissingWebXml>
-            </configuration>
-         </plugin>
-         <plugin>
-            <groupId>org.wildfly.plugins</groupId>
-            <artifactId>wildfly-maven-plugin</artifactId>
-            <version>${version.wildfly.maven.plugin}</version>
-         </plugin>
-      </plugins>
-   <build>
-      <finalName>${project.artifactId}</finalName>
+    <dependency>
+            <groupId>org.wildfly.bom</groupId>
+            <artifactId>wildfly-javaee7-with-tools</artifactId>
+            <version>${version.jboss.bom}</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+  </dependencies>
+  
+      <finalName>AngularJSResetful</finalName>
       <plugins>
          <plugin>
             <artifactId>maven-compiler-plugin</artifactId>
@@ -76,25 +48,4 @@
          </plugin>
       </plugins>
    </build>
-   <profiles>
-      <profile>
-         <id>default</id>
-         <activation>
-            <activeByDefault>true</activeByDefault>
-         </activation>
-         <build>
-            <plugins>
-               <plugin>
-                  <artifactId>maven-surefire-plugin</artifactId>
-                  <version>2.4.3</version>
-                  <configuration>
-                     <skip>true</skip>
-                  </configuration>
-               </plugin>
-            </plugins>
-         </build>
-      </profile>
-   </profiles>
-      </dependency>
-  </dependencies>
 </project>
